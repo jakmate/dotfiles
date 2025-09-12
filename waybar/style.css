@@ -1,0 +1,263 @@
+/* Flow State Waybar Theme - Scientifically Optimized Colors */
+/* Based on research: warm corals for focus, cool blues for calm */
+
+* {
+    font-family: 'JetBrains Mono', 'Fira Code', Iosevka Term, monospace;
+    font-size: 12px;
+    border-radius: 0;
+    font-weight: 300;
+}
+
+slider, scale, trough, highlight {
+    all: unset;
+    min-height: inherit;
+    min-width: inherit;
+}
+
+window#waybar {
+    background: linear-gradient(90deg, 
+        rgba(15, 15, 20, 0.98) 0%,
+        rgba(20, 20, 26, 0.98) 50%, 
+        rgba(15, 15, 20, 0.98) 100%);
+    border: none;
+    color: #A6ADC8;
+    box-shadow: 0 -1px 0 0 rgba(255, 142, 125, 0.15) inset;
+    min-height: 30px;
+}
+
+window#waybar.hidden {
+    opacity: 0.4;
+}
+
+button {
+    all: unset;
+    min-width: 20px;
+    padding: 0 8px;
+    color: rgba(106, 173, 200, 0.9); /* Cool blue for UI elements */
+    transition: all 0.25s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+button:hover {
+    background-color: rgba(40, 40, 50, 0.6);
+    box-shadow: inset 0 -2px rgba(255, 107, 90, 0.4);
+    color: rgba(255, 142, 125, 0.95);
+}
+
+/* Workspaces - Flow state indicators */
+#workspaces button {
+    color: #585B70;
+    font-weight: 300;
+    border-radius: 6px;
+    margin: 0 2px;
+    background: rgba(30, 30, 38, 0.4);
+}
+
+#workspaces button:hover {
+    color: #6AADC8;
+    background: rgba(74, 144, 164, 0.2);
+}
+
+#workspaces button.focused {
+    color: rgba(255, 107, 90, 0.95); /* Warm coral for active workspace */
+    background: linear-gradient(45deg, 
+        rgba(255, 107, 90, 0.15), 
+        rgba(255, 142, 125, 0.10));
+    box-shadow: inset 0 -2px rgba(255, 107, 90, 0.6);
+    font-weight: 500;
+}
+
+#workspaces button.urgent {
+    background: rgba(220, 85, 85, 0.25);
+    animation: gentle-pulse 2s infinite alternate;
+}
+
+#custom-workspacel,
+#custom-workspacer {
+    color: #585B70;
+    font-family: 'JetBrains Mono', monospace;
+    font-weight: 400;
+    letter-spacing: 6px;
+}
+
+#custom-workspacel.workspace-active,
+#custom-workspacer.workspace-active {
+    color: rgba(255, 107, 90, 0.95);
+    background: rgba(255, 107, 90, 0.1);
+}
+
+#custom-workspacel.workspace-inactive,
+#custom-workspacer.workspace-inactive {
+    color: #585B70;
+    opacity: 0.6;
+}
+
+/* Unified modules - Enhanced flow state design */
+#clock,
+#battery, 
+#backlight,
+#network,
+#bluetooth,
+#pulseaudio,
+#power-profiles-daemon,
+#custom-workspacel,
+#custom-workspacer,
+#custom-power {
+    padding: 4px 12px;
+    margin: 2px;
+    background: rgba(25, 25, 32, 0.8);
+    border-radius: 8px;
+    border: 1px solid rgba(74, 144, 164, 0.2);
+    color: #9399B2;
+    font-weight: 300;
+    transition: all 0.3s ease;
+}
+
+/* Hover states for interaction feedback */
+#network:hover,
+#bluetooth:hover, 
+#pulseaudio:hover,
+#battery:hover,
+#backlight:hover,
+#power-profiles-daemon:hover {
+    background: rgba(40, 40, 50, 0.9);
+    border-color: rgba(106, 173, 200, 0.4);
+    color: #A6ADC8;
+}
+
+/* Status indicators */
+#network.disconnected,
+#pulseaudio.muted {
+    color: rgba(220, 85, 85, 0.8);
+    border-color: rgba(220, 85, 85, 0.3);
+}
+
+#battery.charging, 
+#battery.plugged {
+    color: rgba(64, 160, 115, 0.9); /* Green for positive state */
+    border-color: rgba(64, 160, 115, 0.3);
+}
+
+#battery.warning {
+    color: rgba(255, 180, 100, 0.9); /* Warm yellow */
+    border-color: rgba(255, 180, 100, 0.3);
+}
+
+#battery.critical:not(.charging) {
+    background: rgba(220, 85, 85, 0.15);
+    color: rgba(220, 85, 85, 0.95);
+    animation: slow-blink 1.5s infinite alternate;
+}
+
+/* Power profiles - Visual feedback */
+#power-profiles-daemon.performance {
+    background: rgba(255, 107, 90, 0.1);
+    color: rgba(255, 107, 90, 0.95);
+    border-color: rgba(255, 107, 90, 0.3);
+}
+
+#power-profiles-daemon.balanced {
+    color: rgba(255, 180, 100, 0.9);
+    border-color: rgba(255, 180, 100, 0.3);
+}
+
+#power-profiles-daemon.power-saver {
+    color: rgba(64, 160, 115, 0.9);
+    border-color: rgba(64, 160, 115, 0.3);
+}
+
+/* Clock - Central focus element */
+#clock {
+    color: rgba(255, 142, 125, 0.95); /* Warm coral accent */
+    font-weight: 500;
+    background: linear-gradient(135deg, 
+        rgba(25, 25, 32, 0.9), 
+        rgba(35, 35, 42, 0.9));
+    border: 1px solid rgba(255, 142, 125, 0.25);
+    font-size: 13px;
+}
+
+#clock:hover {
+    background: linear-gradient(135deg, 
+        rgba(40, 40, 50, 0.95), 
+        rgba(50, 50, 60, 0.95));
+    box-shadow: 0 2px 8px rgba(255, 107, 90, 0.2);
+}
+
+/* Power button - Subtle but accessible */
+#custom-power {
+    color: rgba(220, 85, 85, 0.8);
+    background: rgba(30, 30, 40, 0.8);
+    border-color: rgba(220, 85, 85, 0.2);
+}
+
+#custom-power:hover {
+    color: rgba(255, 107, 90, 0.95);
+    background: rgba(50, 50, 60, 0.9);
+    border-color: rgba(255, 107, 90, 0.4);
+}
+
+/* Slider styling - Enhanced visual feedback */
+#pulseaudio-slider,
+#backlight-slider {
+    min-width: 80px;
+    padding: 4px 10px;
+    background: rgba(25, 25, 32, 0.8);
+    border-radius: 8px;
+    border: 1px solid rgba(74, 144, 164, 0.2);
+}
+
+#pulseaudio-slider:hover,
+#backlight-slider:hover {
+    background: rgba(40, 40, 50, 0.9);
+    border-color: rgba(106, 173, 200, 0.4);
+}
+
+#pulseaudio-slider slider,
+#backlight-slider slider {
+    min-height: 8px;
+}
+
+#pulseaudio-slider trough,
+#backlight-slider trough {
+    min-height: 8px;
+    border-radius: 4px;
+    background: rgba(50, 50, 65, 0.7);
+    box-shadow: inset 0 1px 2px rgba(0,0,0,0.3);
+}
+
+#pulseaudio-slider highlight,
+#backlight-slider highlight {
+    border-radius: 4px;
+    background: linear-gradient(90deg, 
+        rgba(74, 144, 164, 0.8), 
+        rgba(106, 173, 200, 0.9));
+    min-width: 2px;
+    transition: all 0.2s ease;
+}
+
+#pulseaudio-slider:hover highlight,
+#backlight-slider:hover highlight {
+    background: linear-gradient(90deg, 
+        rgba(255, 107, 90, 0.7), 
+        rgba(255, 142, 125, 0.8));
+}
+
+/* Smooth animations */
+@keyframes slow-blink { 
+    to { opacity: 0.6; } 
+}
+
+@keyframes gentle-pulse { 
+    to { 
+        opacity: 0.7; 
+    } 
+}
+
+/* Tooltip styling */
+tooltip {
+    background: rgba(20, 20, 26, 0.95);
+    border: 1px solid rgba(74, 144, 164, 0.3);
+    border-radius: 8px;
+    color: #A6ADC8;
+    font-size: 11px;
+}

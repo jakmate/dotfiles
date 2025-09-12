@@ -1,0 +1,139 @@
+// -*- mode: jsonc -*-
+{
+    // "layer": "top", // Waybar at top layer
+    // "position": "bottom", // Waybar position (top|bottom|left|right)
+    "height": 32, // Waybar height (to be removed for auto height)
+    // "width": 1280, // Waybar width
+    "spacing": 6, // Gaps between modules (4px)
+    // Choose the order of the modules
+    "modules-left": [
+	    "network",
+	    "bluetooth",
+	    "power-profiles-daemon"
+    ],
+    "modules-center": [
+	    "custom/workspacel",
+	    "clock",
+	    "custom/workspacer"
+    ],
+    "modules-right": [
+	    "pulseaudio",
+	    "pulseaudio/slider",
+	    "backlight",
+	    "backlight/slider",
+	    "battery",
+	    "custom/power"
+    ],
+
+    // Modules configuration
+    "bluetooth": {
+	"format": "{status} ",
+        "format-connected": "{device_alias} ",
+        "format-connected-battery": "{device_alias} {device_battery_percentage}% ",
+        "tooltip-format": "{controller_alias}\t{controller_address}\n\n{num_connections} connected",
+        "tooltip-format-connected": "{controller_alias}\t{controller_address}\n\n{num_connections} connected\n\n{device_enumerate}",
+        "tooltip-format-enumerate-connected": "{device_alias}\t{device_address}",
+        "tooltip-format-enumerate-connected-battery": "{device_alias}\t{device_address}\t{device_battery_percentage}%",
+        "on-click": "blueman-manager"
+    },
+    "custom/workspacel": {
+        "exec": "~/.config/waybar/scripts/workspacel.sh",
+        "return-type": "json",
+        "interval": 1,
+        "on-click": "hyprctl dispatch workspace 1",
+        "on-click-right": "hyprctl dispatch workspace 2"
+    },
+    "custom/workspacer": {
+        "exec": "~/.config/waybar/scripts/workspacer.sh",
+        "return-type": "json",
+        "interval": 1,
+        "on-click": "hyprctl dispatch workspace 3",
+        "on-click-right": "hyprctl dispatch workspace 4"
+    },
+    "clock": {
+        "format": "{:%H:%M, %a, %d %b}",
+        "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>"
+    },
+
+    "backlight": {
+        "format": "{percent}% {icon}",
+        "format-icons": ["🌙", "☀️", "☀️"],
+        "smooth-scrolling-threshold": 1,
+        "on-scroll-up": "brightnessctl -n2 set 5%+",
+        "on-scroll-down": "brightnessctl -n2 set 5%-"
+    },
+
+    "backlight/slider": {
+        "orientation": "horizontal",
+        "height": 20,
+        "width": 85
+    },
+
+    "battery": {
+        "states": {
+            "warning": 30,
+            "critical": 15
+        },
+        "format": "{capacity}% {icon}",
+        "format-full": "{capacity}% {icon}",
+        "format-charging": "{capacity}% ",
+        "format-plugged": "{capacity}% ",
+        "format-alt": "{time} {icon}",
+        "format-icons": ["", "", "", "", ""]
+    },
+
+    "power-profiles-daemon": {
+      "format": "{icon}",
+      "tooltip-format": "Power profile: {profile}\nDriver: {driver}",
+      "tooltip": true,
+      "format-icons": {
+        "default": "",
+        "performance": "",
+        "balanced": "",
+        "power-saver": ""
+      }
+    },
+    "network": {
+        "format-wifi": "{essid} ({signalStrength}%) ",
+        "format-ethernet": "{ipaddr}/{cidr} ",
+        "format-linked": "{ifname} (No IP) ",
+        "format-disconnected": "Disconnected ⚠",
+        "on-click": "nm-connection-editor"
+    },
+    "pulseaudio": {
+        "format": "{volume}% {icon} {format_source}",
+        "format-bluetooth": "{volume}% {icon} {format_source}",
+        "format-bluetooth-muted": " {icon} {format_source}",
+        "format-muted": " {format_source}",
+        "format-source": "{volume}% ",
+        "format-source-muted": "",
+        "format-icons": {
+            "headphone": "",
+            "hands-free": "",
+            "headset": "",
+            "phone": "",
+            "portable": "",
+            "car": "",
+            "default": ["", "", ""]
+        },
+        "on-click": "pavucontrol"
+    },
+    "pulseaudio/slider": {
+        "min": 0,
+        "max": 100,
+        "width": 85
+    },
+    "custom/power": {
+        "format" : "⏻",
+	    "tooltip": false,
+	    "menu": "on-click",
+	    "menu-file": "$HOME/.config/waybar/power_menu.xml",
+	    "menu-actions": {
+		    "lock": "hyprlock",
+		    "shutdown": "shutdown now",
+		    "reboot": "reboot",
+		    "suspend": "systemctl suspend",
+		    "hibernate": "systemctl hibernate"
+	    }
+    }
+}
