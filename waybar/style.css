@@ -94,14 +94,14 @@ button:hover {
 /* Unified modules - Enhanced flow state design */
 #clock,
 #battery, 
-#backlight,
 #network,
 #bluetooth,
-#pulseaudio,
 #power-profiles-daemon,
 #custom-workspacel,
 #custom-workspacer,
-#custom-power {
+#custom-power,
+#custom-brightness,
+#custom-volume {
     padding: 4px 12px;
     margin: 2px;
     background: rgba(25, 25, 32, 0.8);
@@ -115,18 +115,19 @@ button:hover {
 /* Hover states for interaction feedback */
 #network:hover,
 #bluetooth:hover, 
-#pulseaudio:hover,
 #battery:hover,
-#backlight:hover,
-#power-profiles-daemon:hover {
+#power-profiles-daemon:hover,
+#custom-volume:hover,
+#custom-brightness:hover {
     background: rgba(40, 40, 50, 0.9);
     border-color: rgba(106, 173, 200, 0.4);
     color: #A6ADC8;
 }
 
 /* Status indicators */
-#network.disconnected,
-#pulseaudio.muted {
+#custom-volume.muted,
+#custom-brightness.low,
+#network.disconnected {
     color: rgba(220, 85, 85, 0.8);
     border-color: rgba(220, 85, 85, 0.3);
 }
@@ -194,52 +195,6 @@ button:hover {
     color: rgba(255, 107, 90, 0.95);
     background: rgba(50, 50, 60, 0.9);
     border-color: rgba(255, 107, 90, 0.4);
-}
-
-/* Slider styling - Enhanced visual feedback */
-#pulseaudio-slider,
-#backlight-slider {
-    min-width: 80px;
-    padding: 4px 10px;
-    background: rgba(25, 25, 32, 0.8);
-    border-radius: 8px;
-    border: 1px solid rgba(74, 144, 164, 0.2);
-}
-
-#pulseaudio-slider:hover,
-#backlight-slider:hover {
-    background: rgba(40, 40, 50, 0.9);
-    border-color: rgba(106, 173, 200, 0.4);
-}
-
-#pulseaudio-slider slider,
-#backlight-slider slider {
-    min-height: 8px;
-}
-
-#pulseaudio-slider trough,
-#backlight-slider trough {
-    min-height: 8px;
-    border-radius: 4px;
-    background: rgba(50, 50, 65, 0.7);
-    box-shadow: inset 0 1px 2px rgba(0,0,0,0.3);
-}
-
-#pulseaudio-slider highlight,
-#backlight-slider highlight {
-    border-radius: 4px;
-    background: linear-gradient(90deg, 
-        rgba(74, 144, 164, 0.8), 
-        rgba(106, 173, 200, 0.9));
-    min-width: 2px;
-    transition: all 0.2s ease;
-}
-
-#pulseaudio-slider:hover highlight,
-#backlight-slider:hover highlight {
-    background: linear-gradient(90deg, 
-        rgba(255, 107, 90, 0.7), 
-        rgba(255, 142, 125, 0.8));
 }
 
 /* Smooth animations */
