@@ -13,7 +13,6 @@ window {
     background-color: rgba(15, 15, 20, 0.98);
     border: 1px solid rgba(255, 107, 90, 0.25);
     border-radius: 12px;
-    backdrop-filter: blur(16px);
     box-shadow: 0 12px 40px rgba(0, 0, 0, 0.7);
 }
 
@@ -62,7 +61,6 @@ window {
 #entry:hover {
     background: rgba(40, 40, 50, 0.6);
     color: #A6ADC8;
-    transform: translateX(4px);
     border-left: 2px solid rgba(106, 173, 200, 0.5);
 }
 
@@ -73,7 +71,6 @@ window {
     border: 1px solid rgba(255, 107, 90, 0.3);
     color: rgba(255, 142, 125, 0.95);
     font-weight: 400;
-    transform: translateX(6px);
     box-shadow: 0 2px 8px rgba(255, 107, 90, 0.2);
 }
 
@@ -102,7 +99,6 @@ window {
 /* Enhanced scrollbar */
 scrollbar {
     background-color: transparent;
-    width: 8px;
     margin: 0 2px;
 }
 
@@ -146,12 +142,6 @@ scrollbar slider:hover {
     border-bottom: 1px solid rgba(74, 144, 164, 0.1);
 }
 
-/* Search result categories */
-#entry[data-urgent="true"] {
-    border-left: 3px solid rgba(220, 85, 85, 0.7);
-    background: rgba(220, 85, 85, 0.05);
-}
-
 /* Animation for smooth interactions */
 #entry {
     animation: fadeIn 0.3s ease-out;
@@ -160,10 +150,8 @@ scrollbar slider:hover {
 @keyframes fadeIn {
     from {
         opacity: 0;
-        transform: translateY(-5px);
     }
     to {
         opacity: 1;
-        transform: translateY(0);
     }
 }

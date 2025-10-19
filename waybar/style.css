@@ -71,7 +71,10 @@ button:hover {
     animation: gentle-pulse 2s infinite alternate;
 }
 
-#custom-workspacel,
+#custom-workspace1,
+#custom-workspace2,
+#custom-workspace3,
+#custom-workspace4,
 #custom-workspacer {
     color: #585B70;
     font-family: 'JetBrains Mono', monospace;
@@ -79,13 +82,19 @@ button:hover {
     letter-spacing: 6px;
 }
 
-#custom-workspacel.workspace-active,
+#custom-workspace1.workspace-active,
+#custom-workspace2.workspace-active,
+#custom-workspace3.workspace-active,
+#custom-workspace4.workspace-active,
 #custom-workspacer.workspace-active {
     color: rgba(255, 107, 90, 0.95);
     background: rgba(255, 107, 90, 0.1);
 }
 
-#custom-workspacel.workspace-inactive,
+#custom-workspace1.workspace-inactive,
+#custom-workspace2.workspace-inactive,
+#custom-workspace3.workspace-inactive,
+#custom-workspace4.workspace-inactive,
 #custom-workspacer.workspace-inactive {
     color: #585B70;
     opacity: 0.6;
@@ -93,15 +102,19 @@ button:hover {
 
 /* Unified modules - Enhanced flow state design */
 #clock,
-#battery, 
+#custom-battery, 
 #network,
 #bluetooth,
 #power-profiles-daemon,
-#custom-workspacel,
+#custom-workspace1,
+#custom-workspace2,
+#custom-workspace3,
+#custom-workspace4,
 #custom-workspacer,
 #custom-power,
 #custom-brightness,
-#custom-volume {
+#custom-volume,
+#custom-microphone {
     padding: 4px 12px;
     margin: 2px;
     background: rgba(25, 25, 32, 0.8);
@@ -115,10 +128,16 @@ button:hover {
 /* Hover states for interaction feedback */
 #network:hover,
 #bluetooth:hover, 
-#battery:hover,
+#custom-battery:hover,
 #power-profiles-daemon:hover,
 #custom-volume:hover,
-#custom-brightness:hover {
+#custom-brightness:hover,
+#custom-microphone:hover,
+#custom-workspace1:hover,
+#custom-workspace2:hover,
+#custom-workspace3:hover,
+#custom-workspace4:hover,
+#custom-workspacer:hover  {
     background: rgba(40, 40, 50, 0.9);
     border-color: rgba(106, 173, 200, 0.4);
     color: #A6ADC8;
@@ -132,18 +151,18 @@ button:hover {
     border-color: rgba(220, 85, 85, 0.3);
 }
 
-#battery.charging, 
-#battery.plugged {
+#custom-battery.charging, 
+#custom-battery.plugged {
     color: rgba(64, 160, 115, 0.9); /* Green for positive state */
     border-color: rgba(64, 160, 115, 0.3);
 }
 
-#battery.warning {
+#custom-battery.warning {
     color: rgba(255, 180, 100, 0.9); /* Warm yellow */
     border-color: rgba(255, 180, 100, 0.3);
 }
 
-#battery.critical:not(.charging) {
+#custom-battery.critical:not(.charging) {
     background: rgba(220, 85, 85, 0.15);
     color: rgba(220, 85, 85, 0.95);
     animation: slow-blink 1.5s infinite alternate;
