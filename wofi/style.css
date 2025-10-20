@@ -1,4 +1,4 @@
-/* Flow State Wofi Theme - Scientifically Optimized Colors */
+/* Flow State – Cowboy Bebop Theme for wofi */
 
 * {
     all: unset;
@@ -6,36 +6,36 @@
     font-size: 13px;
     font-weight: 300;
     background: transparent;
+    color: #9DA3B5;
 }
 
 window {
-    all: unset;
-    background-color: rgba(15, 15, 20, 0.98);
+    background-color: #0C0C11;
     border: 1px solid rgba(255, 107, 90, 0.25);
     border-radius: 12px;
     box-shadow: 0 12px 40px rgba(0, 0, 0, 0.7);
 }
 
 #input {
-    background: linear-gradient(135deg, 
-        rgba(25, 25, 32, 0.9), 
-        rgba(30, 30, 38, 0.9));
-    border: 1px solid rgba(74, 144, 164, 0.4);
+    background: linear-gradient(135deg,
+            rgba(20, 20, 28, 0.9),
+            rgba(24, 24, 34, 0.9));
+    border: 1px solid rgba(106, 173, 200, 0.4);
     border-radius: 8px;
     color: #A6ADC8;
     padding: 12px 16px;
     margin: 12px;
     font-size: 13px;
     font-weight: 300;
-    transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    transition: all 0.3s cubic‑bezier(0.25, 0.46, 0.45, 0.94);
 }
 
 #input:focus {
     border-color: rgba(255, 107, 90, 0.6);
     box-shadow: 0 0 0 3px rgba(255, 107, 90, 0.15);
-    background: linear-gradient(135deg, 
-        rgba(35, 35, 42, 0.95), 
-        rgba(40, 40, 48, 0.95));
+    background: linear-gradient(135deg,
+            rgba(30, 30, 38, 0.95),
+            rgba(35, 35, 45, 0.95));
     color: rgba(255, 142, 125, 0.95);
 }
 
@@ -53,8 +53,8 @@ window {
     border-radius: 8px;
     padding: 12px 16px;
     margin: 2px 0;
-    color: #9399B2;
-    transition: all 0.25s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    color: #9DA3B5;
+    transition: all 0.25s cubic‑bezier(0.25, 0.46, 0.45, 0.94);
     font-weight: 300;
 }
 
@@ -65,9 +65,9 @@ window {
 }
 
 #entry:selected {
-    background: linear-gradient(90deg, 
-        rgba(255, 107, 90, 0.12), 
-        rgba(255, 142, 125, 0.08));
+    background: linear-gradient(90deg,
+            rgba(255, 107, 90, 0.12),
+            rgba(255, 142, 125, 0.08));
     border: 1px solid rgba(255, 107, 90, 0.3);
     color: rgba(255, 142, 125, 0.95);
     font-weight: 400;
@@ -86,43 +86,28 @@ window {
     opacity: 1.0;
 }
 
-#entry label {
-    color: inherit;
-    transition: color 0.2s ease;
-}
-
-#entry:selected label {
-    color: rgba(255, 142, 125, 0.95);
-    font-weight: 400;
-}
-
-/* Enhanced scrollbar */
+/* Scrollbar styling */
 scrollbar {
     background-color: transparent;
     margin: 0 2px;
 }
 
 scrollbar slider {
-    background: linear-gradient(180deg, 
-        rgba(255, 107, 90, 0.3), 
-        rgba(255, 142, 125, 0.2));
+    background: linear-gradient(180deg,
+            rgba(255, 107, 90, 0.3),
+            rgba(255, 142, 125, 0.2));
     border-radius: 4px;
     min-height: 20px;
     transition: all 0.2s ease;
 }
 
 scrollbar slider:hover {
-    background: linear-gradient(180deg, 
-        rgba(255, 107, 90, 0.5), 
-        rgba(255, 142, 125, 0.4));
+    background: linear-gradient(180deg,
+            rgba(255, 107, 90, 0.5),
+            rgba(255, 142, 125, 0.4));
 }
 
-#text {
-    padding: 0;
-    margin: 0;
-}
-
-/* Alternating subtle backgrounds */
+/* alternating row backgrounds – subtle */
 #entry:nth-child(even) {
     background-color: rgba(20, 20, 26, 0.15);
 }
@@ -132,17 +117,17 @@ scrollbar slider:hover {
 }
 
 #entry:nth-child(even):selected {
-    background: linear-gradient(90deg, 
-        rgba(255, 107, 90, 0.12), 
-        rgba(255, 142, 125, 0.08));
+    background: linear-gradient(90deg,
+            rgba(255, 107, 90, 0.12),
+            rgba(255, 142, 125, 0.08));
 }
 
 /* Subtle separators */
 #entry:not(:last-child) {
-    border-bottom: 1px solid rgba(74, 144, 164, 0.1);
+    border-bottom: 1px solid rgba(106, 173, 200, 0.1);
 }
 
-/* Animation for smooth interactions */
+/* Smooth fade-in animation */
 #entry {
     animation: fadeIn 0.3s ease-out;
 }
@@ -151,6 +136,7 @@ scrollbar slider:hover {
     from {
         opacity: 0;
     }
+
     to {
         opacity: 1;
     }
