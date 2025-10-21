@@ -1,0 +1,82 @@
+# Flow State – Cowboy Bebop Theme for btop/bashtop
+# Inspired by the wofi theme: deep space noir with red accents and cool undertones
+# by you, with love for Spike, Jet, and the Bebop crew 🎷
+
+# Main background (deep space black)
+theme[main_bg]="#0c0c11"
+
+# Main text color (soft gray-blue)
+theme[main_fg]="#9da3b5"
+
+# Title color for boxes
+theme[title]="#a6adc8"
+
+# Highlight color for keyboard shortcuts (warm coral)
+theme[hi_fg]="#ff8e7d"
+
+# Background color of selected item in processes box
+theme[selected_bg]="#282832"
+
+# Foreground color of selected item in processes box
+theme[selected_fg]="#ff8e7d"
+
+# Color of inactive/disabled text
+theme[inactive_fg]="#5a5f70"
+
+# Misc colors for processes box (mini CPU graphs, memory graph, status text)
+theme[proc_misc]="#6aadca"
+
+# CPU box outline color (subtle cool blue)
+theme[cpu_box]="#6aadca"
+
+# Memory/disks box outline color
+theme[mem_box]="#6aadca"
+
+# Net up/down box outline color
+theme[net_box]="#6aadca"
+
+# Processes box outline color
+theme[proc_box]="#6aadca"
+
+# Box divider line and small boxes line color
+theme[div_line]="#6aadca33"  # Semi-transparent; if not supported, use "#2a2a35"
+
+# Temperature graph: cool → hot (blue → red)
+theme[temp_start]="#6aadca"
+theme[temp_mid]="#ff6b5a"
+theme[temp_end]="#ff6b5a"
+
+# CPU graph: idle (cool blue) → high load (Bebop red)
+theme[cpu_start]="#6aadca"
+theme[cpu_mid]="#ff8e7d"
+theme[cpu_end]="#ff6b5a"
+
+# Mem/Disk free meter (cool, calm)
+theme[free_start]="#6aadca"
+theme[free_mid]=""
+theme[free_end]=""
+
+# Mem/Disk cached meter (slightly warmer)
+theme[cached_start]="#a6adc8"
+theme[cached_mid]=""
+theme[cached_end]=""
+
+# Mem/Disk available meter
+theme[available_start]="#6aadca"
+theme[available_mid]=""
+theme[available_end]=""
+
+# Mem/Disk used meter (red intensity = usage)
+theme[used_start]="#ff8e7d"
+theme[used_mid]="#ff6b5a"
+theme[used_end]="#ff6b5a"
+
+# Download graph: calm blue → active coral
+theme[download_start]="#6aadca"
+theme[download_mid]="#ff8e7d"
+theme[download_end]="#ff6b5a"
+
+# Upload graph: same as download for symmetry
+theme[upload_start]="#6aadca"
+theme[upload_mid]="#ff8e7d"
+theme[upload_end]="#ff6b5a"

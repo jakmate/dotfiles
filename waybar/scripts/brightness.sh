@@ -21,12 +21,12 @@ ascii_bar="[$bar$pad]"
 icon="󰛨"
 
 # Color thresholds
-if [ "$percent" -lt 20 ]; then
-    fg="#DC5555" # red
-elif [ "$percent" -lt 55 ]; then
-    fg="#FFB464" # orange
+if [ "$percent" -lt 10 ]; then
+    fg="#ff6b5a"
+elif [ "$percent" -lt 50 ]; then
+    fg="#ffb464"
 else
-    fg="#56B6C2" # blue
+    fg="#6aadc8"
 fi
 
 # Device name (first column from brightnessctl --machine-readable)
