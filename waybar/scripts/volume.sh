@@ -5,6 +5,9 @@
 # Dependencies: wpctl, awk, bc, seq, printf
 # ───────────────────────────────────────────────────────────
 
+# Source colours file
+source "$(dirname "$0")/colours.sh"
+
 # Get raw volume and convert to int
 vol_raw=$(wpctl get-volume @DEFAULT_AUDIO_SINK@ | awk '{ print $2 }')
 vol_int=$(echo "$vol_raw * 100" | bc | awk '{ print int($1) }')
@@ -16,7 +19,7 @@ is_muted=$(wpctl get-volume @DEFAULT_AUDIO_SINK@ | grep -q MUTED && echo true ||
 sink=$(wpctl status | awk '/Sinks:/,/Sources:/' | grep '\*' | cut -d'.' -f2- | sed 's/^\s*//; s/\[.*//')
 
 # Icon logic
-if [ "$is_muted" = true ]; then
+if [ "$is_muted" = true ] || [ "$vol_int" == 0 ]; then
   icon=""
   vol_int=0
 elif [ "$vol_int" -lt 50 ]; then
@@ -34,11 +37,11 @@ ascii_bar="[$bar$pad]"
 
 # Color logic
 if [ "$is_muted" = true ] || [ "$vol_int" -lt 10 ]; then
-  fg="#ff6b5a"
+  fg="$COLOR_LOW"
 elif [ "$vol_int" -lt 50 ]; then
-  fg="#ffb464"
+  fg="$COLOR_MEDIUM"
 else
-  fg="#6aadc8"
+  fg="$COLOR_HIGH"
 fi
 
 # Tooltip text

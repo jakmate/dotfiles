@@ -5,13 +5,16 @@
 # Dependencies: upower, awk, seq, printf
 #  ──────────────────────────────────────────────────────────
 
+# Source colours file
+source "$(dirname "$0")/colours.sh"
+
 capacity=$(cat /sys/class/power_supply/BAT0/capacity 2>/dev/null)
 status=$(cat /sys/class/power_supply/BAT0/status 2>/dev/null)
 
 # Fallback if BAT0 not found (e.g., desktop)
 if [ -z "$capacity" ]; then
-    echo '{"text":"󰂑 AC", "tooltip":"Connected to AC power"}'
-    exit 0
+  echo '{"text":"󰂑 AC", "tooltip":"Connected to AC power"}'
+  exit 0
 fi
 
 # Get detailed info from upower
@@ -26,11 +29,11 @@ index=$((capacity / 10))
 [ $index -ge 10 ] && index=9
 
 if [[ "$status" == "Charging" ]]; then
-    icon=${charging_icons[$index]}
+  icon=${charging_icons[$index]}
 elif [[ "$status" == "Full" ]]; then
-    icon="󰂅"
+  icon="󰂅"
 else
-    icon=${default_icons[$index]}
+  icon=${default_icons[$index]}
 fi
 
 # ASCII bar
@@ -41,20 +44,20 @@ pad=$(printf '░%.0s' $(seq 1 $empty))
 ascii_bar="[$bar$pad]"
 
 if [ "$capacity" -lt 30 ]; then
-    fg="#ff6b5a"
+  fg="$COLOR_LOW"
 elif [ "$capacity" -lt 50 ]; then
-    fg="#ffb464"
+  fg="$COLOR_MEDIUM"
 else
-    fg="#6aadc8"
+  fg="$COLOR_HIGH"
 fi
 
 # Tooltip
 tooltip="Battery: ${capacity}%\nStatus: ${status}"
 if [ -n "$time_to_empty" ]; then
-    tooltip+="\nTime to empty: $time_to_empty"
+  tooltip+="\nTime to empty: $time_to_empty"
 fi
 if [ -n "$time_to_full" ]; then
-    tooltip+="\nTime to full: $time_to_full"
+  tooltip+="\nTime to full: $time_to_full"
 fi
 
 # Escape quotes for JSON

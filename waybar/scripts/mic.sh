@@ -5,11 +5,13 @@
 # Dependencies: pactl (PulseAudio / PipeWire)
 # ───────────────────────────────────────────────────────────
 
+# Source colours file
+source "$(dirname "$0")/colours.sh"
 
 if pactl get-source-mute @DEFAULT_SOURCE@ | grep -q 'yes'; then
   # Muted → mic-off icon
-  echo "<span foreground='#fab387'>[  ]</span>"
+  echo "<span foreground='$COLOR_LOW'>[  ]</span>"
 else
   # Active → mic-on icon
-  echo "<span foreground='#56b6c2'>[  ]</span>"
+  echo "<span foreground='$COLOR_HIGH'>[  ]</span>"
 fi

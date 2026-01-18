@@ -9,22 +9,23 @@
     // Modules
     "modules-left": [
         "custom/power",
-	    "network",
-	    "bluetooth",
+	      "network",
+	      "bluetooth",
         "custom/microphone",
-	    "power-profiles-daemon"
+        "power-profiles-daemon",
+        "custom/keyboard"
     ],
     "modules-center": [
-	    "custom/workspace1",
+	      "custom/workspace1",
         "custom/workspace2",
-	    "clock",
-	    "custom/workspace3",
+	      "clock",
+	      "custom/workspace3",
         "custom/workspace4"
     ],
     "modules-right": [
         "custom/volume",
-	    "custom/brightness",
-	    "custom/battery"
+  	    "custom/brightness",
+	      "custom/battery"
     ],
 
     // Power
@@ -85,6 +86,14 @@
         "balanced": "",
         "power-saver": ""
       }
+    },
+
+    // Keyboard
+    "custom/keyboard": {
+      "exec": "~/.config/waybar/scripts/keyboard.sh",
+      "interval": 1,
+      "on-click": "~/.config/waybar/scripts/keyboard.sh next",
+      "tooltip": true
     },
 
     //Workspaces

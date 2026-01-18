@@ -5,6 +5,9 @@
 # Dependencies: brightnessctl, seq, printf, awk
 #  ─────────────────────────────────────────────────────────
 
+# Source colors file
+source "$(dirname "$0")/colours.sh"
+
 # Get brightness percentage
 brightness=$(brightnessctl get)
 max_brightness=$(brightnessctl max)
@@ -22,11 +25,11 @@ icon="󰛨"
 
 # Color thresholds
 if [ "$percent" -lt 10 ]; then
-    fg="#ff6b5a"
+  fg="$COLOR_LOW"
 elif [ "$percent" -lt 50 ]; then
-    fg="#ffb464"
+  fg="$COLOR_MEDIUM"
 else
-    fg="#6aadc8"
+  fg="$COLOR_HIGH"
 fi
 
 # Device name (first column from brightnessctl --machine-readable)

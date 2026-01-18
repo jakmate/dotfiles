@@ -1,242 +1,190 @@
-/* === PEACEMAKER WAYBAR THEME - RED SUNSET EDITION === */
-/* Based on your palette: D2C7C7, 7E1717, C82626, 471D1D */
+/* =========================
+   JDM DASHBOARD WAYBAR
+   ========================= */
 
+/* Global reset */
 * {
-    font-family: 'JetBrains Mono', 'Fira Code', Iosevka Term, monospace;
-    font-size: 12px;
-    border-radius: 0;
-    font-weight: 300;
-}
-
-slider,
-scale,
-trough,
-highlight {
-    all: unset;
-    min-height: inherit;
-    min-width: inherit;
-}
-
-window#waybar {
-    background: linear-gradient(90deg,
-            rgba(71, 29, 29, 0.98) 0%,  /* 471D1D */
-            rgba(126, 23, 23, 0.98) 50%, /* 7E1717 */
-            rgba(71, 29, 29, 0.98) 100%); /* 471D1D */
     border: none;
-    color: #D2C7C7; /* Warm off-white */
-    box-shadow: 0 -1px 0 0 rgba(196, 38, 38, 0.25) inset; /* C82626 */
-    min-height: 30px;
-}
-
-window#waybar.hidden {
-    opacity: 0.4;
-}
-
-button {
-    all: unset;
-    min-width: 20px;
-    padding: 0 8px;
-    color: rgba(196, 38, 38, 0.85); /* C82626 */
-    transition: all 0.25s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-}
-
-button:hover {
-    background-color: rgba(196, 38, 38, 0.15); /* C82626 */
-    box-shadow: inset 0 -2px rgba(196, 38, 38, 0.5); /* C82626 */
-    color: #D2C7C7; /* Warm off-white */
-}
-
-/* Workspaces - Flow state indicators */
-#workspaces button {
-    color: #B5A5A5; /* Softer red tone */
-    font-weight: 300;
-    border-radius: 6px;
-    margin: 0 2px;
-    background: rgba(126, 23, 23, 0.3); /* 7E1717 */
-}
-
-#workspaces button:hover {
-    color: #D2C7C7; /* Warm off-white */
-    background: rgba(196, 38, 38, 0.2); /* C82626 */
-}
-
-#workspaces button.focused {
-    color: #D2C7C7; /* Warm off-white */
-    background: linear-gradient(45deg,
-            rgba(196, 38, 38, 0.25), /* C82626 */
-            rgba(196, 38, 38, 0.15)); /* C82626 */
-    box-shadow: inset 0 -2px rgba(196, 38, 38, 0.7); /* C82626 */
-    font-weight: 500;
-}
-
-#workspaces button.urgent {
-    background: rgba(196, 38, 38, 0.3); /* C82626 */
-    animation: gentle-pulse 2s infinite alternate;
-}
-
-#custom-workspace1,
-#custom-workspace2,
-#custom-workspace3,
-#custom-workspace4,
-#custom-workspacer {
-    color: #B5A5A5; /* Softer red tone */
-    font-family: 'JetBrains Mono', monospace;
-    font-weight: 400;
-    letter-spacing: 6px;
-}
-
-#custom-workspace1.workspace-active,
-#custom-workspace2.workspace-active,
-#custom-workspace3.workspace-active,
-#custom-workspace4.workspace-active,
-#custom-workspacer.workspace-active {
-    color: #D2C7C7; /* Warm off-white */
-    background: rgba(196, 38, 38, 0.15); /* C82626 */
-}
-
-#custom-workspace1.workspace-inactive,
-#custom-workspace2.workspace-inactive,
-#custom-workspace3.workspace-inactive,
-#custom-workspace4.workspace-inactive,
-#custom-workspacer.workspace-inactive {
-    color: #B5A5A5; /* Softer red tone */
-    opacity: 0.7;
-}
-
-/* Unified modules - Enhanced flow state design */
-#clock,
-#custom-battery,
-#network,
-#bluetooth,
-#power-profiles-daemon,
-#custom-workspace1,
-#custom-workspace2,
-#custom-workspace3,
-#custom-workspace4,
-#custom-workspacer,
-#custom-power,
-#custom-brightness,
-#custom-volume,
-#custom-microphone {
-    padding: 4px 12px;
-    margin: 2px;
-    background: rgba(71, 29, 29, 0.7); /* 471D1D */
-    border-radius: 8px;
-    border: 1px solid rgba(196, 38, 38, 0.2); /* C82626 */
-    color: #B5A5A5; /* Softer red tone */
-    font-weight: 300;
-    transition: all 0.3s ease;
-}
-
-/* Hover states for interaction feedback */
-#network:hover,
-#bluetooth:hover,
-#custom-battery:hover,
-#power-profiles-daemon:hover,
-#custom-volume:hover,
-#custom-brightness:hover,
-#custom-microphone:hover,
-#custom-workspace1:hover,
-#custom-workspace2:hover,
-#custom-workspace3:hover,
-#custom-workspace4:hover,
-#custom-workspacer:hover {
-    background: rgba(126, 23, 23, 0.8); /* 7E1717 */
-    border-color: rgba(196, 38, 38, 0.4); /* C82626 */
-    color: #D2C7C7; /* Warm off-white */
-}
-
-/* Status indicators */
-#custom-volume.muted,
-#custom-brightness.low,
-#network.disconnected {
-    color: rgba(196, 38, 38, 0.85); /* C82626 */
-    border-color: rgba(196, 38, 38, 0.3); /* C82626 */
-}
-
-#custom-battery.charging,
-#custom-battery.plugged {
-    color: rgba(196, 38, 38, 0.9); /* C82626 */
-    border-color: rgba(196, 38, 38, 0.3); /* C82626 */
-}
-
-#custom-battery.warning {
-    color: rgba(196, 38, 38, 0.9); /* C82626 */
-    border-color: rgba(196, 38, 38, 0.3); /* C82626 */
-}
-
-#custom-battery.critical:not(.charging) {
-    background: rgba(196, 38, 38, 0.15); /* C82626 */
-    color: rgba(196, 38, 38, 0.95); /* C82626 */
-    animation: slow-blink 1.5s infinite alternate;
-}
-
-/* Power profiles - Visual feedback */
-#power-profiles-daemon.performance {
-    background: rgba(196, 38, 38, 0.15); /* C82626 */
-    color: #D2C7C7; /* Warm off-white */
-    border-color: rgba(196, 38, 38, 0.3); /* C82626 */
-}
-
-#power-profiles-daemon.balanced {
-    color: #D2C7C7; /* Warm off-white */
-    border-color: rgba(196, 38, 38, 0.3); /* C82626 */
-}
-
-#power-profiles-daemon.power-saver {
-    color: #D2C7C7; /* Warm off-white */
-    border-color: rgba(196, 38, 38, 0.3); /* C82626 */
-}
-
-/* Clock - Central focus element */
-#clock {
-    color: #D2C7C7; /* Warm off-white */
-    font-weight: 500;
-    background: linear-gradient(135deg,
-            rgba(71, 29, 29, 0.9), /* 471D1D */
-            rgba(126, 23, 23, 0.9)); /* 7E1717 */
-    border: 1px solid rgba(196, 38, 38, 0.3); /* C82626 */
+    border-radius: 0;
+    min-height: 0;
+    font-family: "JetBrains Mono", "Iosevka", monospace;
     font-size: 13px;
 }
 
-#clock:hover {
-    background: linear-gradient(135deg,
-            rgba(126, 23, 23, 0.95), /* 7E1717 */
-            rgba(196, 38, 38, 0.15)); /* C82626 */
-    box-shadow: 0 2px 8px rgba(196, 38, 38, 0.2); /* C82626 */
+/* Waybar container */
+window#waybar {
+    background: #201D1F;
+    color: #D7D7DA;
+    border-bottom: 2px solid #7D7F82;
 }
 
-/* Power button - Subtle but accessible */
-#custom-power {
-    color: rgba(196, 38, 38, 0.7); /* C82626 */
-    background: rgba(71, 29, 29, 0.7); /* 471D1D */
-    border-color: rgba(196, 38, 38, 0.2); /* C82626 */
-}
-
-#custom-power:hover {
-    color: #D2C7C7; /* Warm off-white */
-    background: rgba(126, 23, 23, 0.9); /* 7E1717 */
-    border-color: rgba(196, 38, 38, 0.4); /* C82626 */
-}
-
-/* Smooth animations */
-@keyframes slow-blink {
-    to {
-        opacity: 0.6;
-    }
-}
-
-@keyframes gentle-pulse {
-    to {
-        opacity: 0.7;
-    }
-}
-
-/* Tooltip styling */
+/* Tooltip (HUD style) */
 tooltip {
-    background: rgba(71, 29, 29, 0.95); /* 471D1D */
-    border: 1px solid rgba(196, 38, 38, 0.3); /* C82626 */
-    border-radius: 8px;
-    color: #D2C7C7; /* Warm off-white */
-    font-size: 11px;
+    background: #201D1F;
+    color: #D7D7DA;
+    border: 1px solid #F01416;
+    padding: 8px;
 }
+
+/* =========================
+   MODULE GROUPING
+   ========================= */
+
+.modules-left,
+.modules-center,
+.modules-right {
+    padding: 4px 6px;
+}
+
+/* Common module style */
+#custom-power,
+#network,
+#bluetooth,
+#custom-microphone,
+#power-profiles-daemon,
+#custom-keyboard,
+#clock,
+#custom-volume,
+#custom-brightness,
+#custom-battery,
+#custom-workspace1,
+#custom-workspace2,
+#custom-workspace3,
+#custom-workspace4 {
+    background: linear-gradient(
+        180deg,
+        #2A2628 0%,
+        #201D1F 100%
+    );
+    color: #D7D7DA;
+    padding: 2px 10px;
+    margin: 0 2px;
+    border: 1px solid #7D7F82;
+    box-shadow:
+        inset 0 0 0 1px rgba(255,255,255,0.03);
+}
+
+/* =========================
+   REDLINE ACCENTS
+   ========================= */
+
+/* Power button – ignition */
+#custom-power {
+    color: #F01416;
+    border-color: #F01416;
+    box-shadow: 0 0 6px rgba(240,20,22,0.5);
+}
+
+/* Active power profile */
+#power-profiles-daemon.performance {
+    color: #F01416;
+}
+
+/* Network connected */
+#network.wifi,
+#network.ethernet {
+    color: #D7D7DA;
+}
+
+/* Network disconnected – warning red */
+#network.disconnected {
+    color: #F01416;
+}
+
+/* Bluetooth enabled */
+#bluetooth.enabled {
+    color: #7D7F82;
+}
+
+/* =========================
+   WORKSPACES (GAUGE STYLE)
+   ========================= */
+
+#custom-workspace1,
+#custom-workspace2,
+#custom-workspace3,
+#custom-workspace4 {
+    color: #7D7F82;
+    border-bottom: 2px solid transparent;
+}
+
+/* Active workspace (simulated by script output) */
+#custom-workspace1.active,
+#custom-workspace2.active,
+#custom-workspace3.active,
+#custom-workspace4.active {
+    color: #F01416;
+    border-bottom: 2px solid #F01416;
+    box-shadow: inset 0 -2px 0 #F01416;
+}
+
+/* =========================
+   CENTER CLOCK (SPEEDO)
+   ========================= */
+
+#clock {
+    color: #D7D7DA;
+    font-weight: bold;
+    letter-spacing: 1px;
+    border-left: 2px solid #796563;
+    border-right: 2px solid #796563;
+    padding: 2px 14px;
+}
+
+/* =========================
+   AUDIO / BRIGHTNESS
+   ========================= */
+
+#custom-volume,
+#custom-brightness {
+    color: #7D7F82;
+}
+
+#custom-volume.muted {
+    color: #F01416;
+}
+
+/* =========================
+   BATTERY (FUEL GAUGE)
+   ========================= */
+
+#custom-battery {
+    color: #D7D7DA;
+}
+
+/* Warning levels */
+#custom-battery.warning {
+    color: #F01416;
+}
+
+#custom-battery.critical {
+    color: #F01416;
+    box-shadow: 0 0 8px rgba(240,20,22,0.7);
+}
+
+/* =========================
+   MICROPHONE
+   ========================= */
+
+#custom-microphone {
+    color: #7D7F82;
+}
+
+#custom-microphone.muted {
+    color: #F01416;
+}
+
+/* =========================
+   HOVER EFFECTS
+   ========================= */
+
+#custom-power:hover,
+#network:hover,
+#bluetooth:hover,
+#custom-volume:hover,
+#custom-brightness:hover,
+#custom-battery:hover {
+    background: #2E2A2C;
+    border-color: #F01416;
+}
+

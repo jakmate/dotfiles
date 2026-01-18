@@ -22,6 +22,7 @@ cp "$HOME/.config/hypr/themes/hyprpaper/$THEME.conf" "$HOME/.config/hypr/hyprpap
 cp "$HOME/.config/hypr/themes/hyprlock/$THEME.conf" "$HOME/.config/hypr/hyprlock.conf"
 cp "$HOME/.config/fastfetch/themes/$THEME.jsonc" "$HOME/.config/fastfetch/config.jsonc"
 cp "$HOME/.config/waybar/themes/$THEME.css" "$HOME/.config/waybar/style.css"
+cp "$HOME/.config/waybar/themes/$THEME.sh" "$HOME/.config/waybar/scripts/colours.sh"
 cp "$HOME/.config/kitty/themes/$THEME.conf" "$HOME/.config/kitty/kitty.conf"
 
 # Extracting the wallpaper path from the configuration
