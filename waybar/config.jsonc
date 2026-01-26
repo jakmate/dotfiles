@@ -1,171 +1,163 @@
 // -*- mode: jsonc -*-
 {
-    "layer": "top", // Waybar at top layer
-    "position": "top",
-    "height": 32,
-    //"width": 1880,
-    "spacing": 6, // Gaps between modules
+	"layer": "top", // Waybar at top layer
+	"position": "top",
+	"height": 32,
+	//"width": 1880,
+	"spacing": 6, // Gaps between modules
 
-    // Modules
-    "modules-left": [
-        "custom/power",
-	      "network",
-	      "bluetooth",
-        "custom/microphone",
-        "power-profiles-daemon",
-        "custom/keyboard"
-    ],
-    "modules-center": [
-	      "custom/workspace1",
-        "custom/workspace2",
-	      "clock",
-	      "custom/workspace3",
-        "custom/workspace4"
-    ],
-    "modules-right": [
-        "custom/volume",
-  	    "custom/brightness",
-	      "custom/battery"
-    ],
+	// Modules
+	"modules-left": [
+		"custom/power",
+		"network",
+		"bluetooth",
+		"custom/microphone",
+		"power-profiles-daemon",
+		"custom/keyboard"
+	],
+	"modules-center": [
+		"custom/workspace1",
+		"custom/workspace2",
+		"clock",
+		"custom/workspace3",
+		"custom/workspace4"
+	],
+	"modules-right": ["custom/volume", "custom/brightness", "custom/battery"],
 
-    // Power
-    "custom/power": {
-        "format": "[ 󰤆 ]",
-        "tooltip": true,
-        "tooltip-format": "Power Menu",
-        "on-click": "~/.config/waybar/scripts/powermenu.sh"
-    },
+	// Power
+	"custom/power": {
+		"format": "[ 󰤆 ]",
+		"tooltip": true,
+		"tooltip-format": "Power Menu",
+		"on-click": "~/.config/waybar/scripts/powermenu.sh"
+	},
 
-    // Wifi
-    "network": {
-        "format-wifi": "{icon}",
-        "format-icons": ["[ 󰤯 ]", "[ 󰤟 ]", "[ 󰤢 ]", "[ 󰤥 ]", "[ 󰤨 ]"],
-        "format-ethernet": "󰀂",
-        "format-alt": "󱛇",
-        "format-disconnected": "󰖪",
-        "tooltip-format-wifi": "{icon} {essid}\n⇣{bandwidthDownBytes}  ⇡{bandwidthUpBytes}",
-        "tooltip-format-ethernet": "󰀂  {ifname}\n⇣{bandwidthDownBytes}  ⇡{bandwidthUpBytes}",
-        "tooltip-format-disconnected": "Disconnected",
-        "on-click": "nm-connection-editor",
-        "interval": 5,
-        "nospacing": 1
-    },
+	// Wifi
+	"network": {
+		"format-wifi": "{icon}",
+		"format-icons": ["[ 󰤯 ]", "[ 󰤟 ]", "[ 󰤢 ]", "[ 󰤥 ]", "[ 󰤨 ]"],
+		"format-ethernet": "󰀂",
+		"format-alt": "󱛇",
+		"format-disconnected": "󰖪",
+		"tooltip-format-wifi": "{icon} {essid}\n⇣{bandwidthDownBytes}  ⇡{bandwidthUpBytes}",
+		"tooltip-format-ethernet": "󰀂  {ifname}\n⇣{bandwidthDownBytes}  ⇡{bandwidthUpBytes}",
+		"tooltip-format-disconnected": "Disconnected",
+		"on-click": "nm-connection-editor",
+		"interval": 5,
+		"nospacing": 1
+	},
 
-    // Bluetooth
-    "bluetooth": {
-        "format": "{icon}",
-        "format-icons": {
-            "enabled": "[  ]",
-            "disabled": "[ 󰂲 ]"
-        },
-        "tooltip-format": "Bluetooth is {status}",
-        "tooltip-format-connected": "{num_connections} connected\n\n{device_enumerate}",
-        "tooltip-format-enumerate-connected": "{device_alias}",
-        "tooltip-format-enumerate-connected-battery": "{device_alias}\t{device_battery_percentage}%",
-        "on-click": "blueman-manager",
-        "interval": 5
-    },
+	// Bluetooth
+	"bluetooth": {
+		"format": "{icon}",
+		"format-icons": {
+			"enabled": "[  ]",
+			"disabled": "[ 󰂲 ]"
+		},
+		"tooltip-format": "Bluetooth is {status}",
+		"tooltip-format-connected": "{num_connections} connected\n\n{device_enumerate}",
+		"tooltip-format-enumerate-connected": "{device_alias}",
+		"tooltip-format-enumerate-connected-battery": "{device_alias}\t{device_battery_percentage}%",
+		"on-click": "blueman-manager",
+		"interval": 5
+	},
 
-    // Microphone
-    "custom/microphone": {
-        "exec": "~/.config/waybar/scripts/mic.sh",
-        "interval": 1,
-        "tooltip": true,
-        "tooltip-format": "Mic Toggle",
-        "on-click": "pactl set-source-mute @DEFAULT_SOURCE@ toggle"
-    },
+	// Microphone
+	"custom/microphone": {
+		"exec": "~/.config/waybar/scripts/mic.sh",
+		"interval": 1,
+		"tooltip": true,
+		"tooltip-format": "Mic Toggle",
+		"on-click": "pactl set-source-mute @DEFAULT_SOURCE@ toggle"
+	},
 
-    // Power modes
-    "power-profiles-daemon": {
-      "format": "[ {icon} ]",
-      "tooltip-format": "Power profile: {profile}\nDriver: {driver}",
-      "tooltip": true,
-      "format-icons": {
-        "default": "",
-        "performance": "",
-        "balanced": "",
-        "power-saver": ""
-      }
-    },
+	// Power modes
+	"power-profiles-daemon": {
+		"format": "[ {icon} ]",
+		"tooltip-format": "Power profile: {profile}\nDriver: {driver}",
+		"tooltip": true,
+		"format-icons": {
+			"default": "",
+			"performance": "",
+			"balanced": "",
+			"power-saver": ""
+		}
+	},
 
-    // Keyboard
-    "custom/keyboard": {
-      "exec": "~/.config/waybar/scripts/keyboard.sh",
-      "interval": 1,
-      "on-click": "~/.config/waybar/scripts/keyboard.sh next",
-      "tooltip": true
-    },
+	// Keyboard
+	"custom/keyboard": {
+		"exec": "~/.config/waybar/scripts/keyboard.sh",
+		"interval": 1,
+		"on-click": "~/.config/waybar/scripts/keyboard.sh next",
+		"tooltip": true
+	},
 
-    //Workspaces
-    "custom/workspace1": {
-        "exec": "~/.config/waybar/scripts/workspace1.sh",
-        "interval": 1,
-        "on-click": "hyprctl dispatch workspace 1"
-    },
-    "custom/workspace2": {
-        "exec": "~/.config/waybar/scripts/workspace2.sh",
-        "interval": 1,
-        "on-click": "hyprctl dispatch workspace 2"
-    },
-     "custom/workspace3": {
-        "exec": "~/.config/waybar/scripts/workspace3.sh",
-        "interval": 1,
-        "on-click": "hyprctl dispatch workspace 3"
-    },
-    "custom/workspace4": {
-        "exec": "~/.config/waybar/scripts/workspace4.sh",
-        "interval": 1,
-        "on-click": "hyprctl dispatch workspace 4"
-    },
+	//Workspaces
+	"custom/workspace1": {
+		"exec": "~/.config/waybar/scripts/workspace1.sh",
+		"interval": 1,
+		"on-click": "hyprctl dispatch workspace 1"
+	},
+	"custom/workspace2": {
+		"exec": "~/.config/waybar/scripts/workspace2.sh",
+		"interval": 1,
+		"on-click": "hyprctl dispatch workspace 2"
+	},
+	"custom/workspace3": {
+		"exec": "~/.config/waybar/scripts/workspace3.sh",
+		"interval": 1,
+		"on-click": "hyprctl dispatch workspace 3"
+	},
+	"custom/workspace4": {
+		"exec": "~/.config/waybar/scripts/workspace4.sh",
+		"interval": 1,
+		"on-click": "hyprctl dispatch workspace 4"
+	},
 
-    // Time
-    "clock": {
-        "format": "[ {:%H:%M, %a, %d %b} ]",
-        "tooltip-format": "<big>{:%Y %B}</big>\n<tt><big>{calendar}</big></tt>"
-    },
+	// Time
+	"clock": {
+		"format": "[ {:%H:%M, %a, %d %b} ]",
+		"tooltip-format": "<big>{:%Y %B}</big>\n<tt><big>{calendar}</big></tt>"
+	},
 
-    // Volume
-    "custom/volume": {
-        "exec": "~/.config/waybar/scripts/volume.sh",
-        "return-type": "json",
-        "interval": 1,
-        "on-click": "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle",
-        "on-scroll-up": "wpctl set-volume -l 1.5 @DEFAULT_AUDIO_SINK@ 5%+",
-        "on-scroll-down": "wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-"
-    },
+	// Volume
+	"custom/volume": {
+		"exec": "~/.config/waybar/scripts/volume.sh",
+		"return-type": "json",
+		"interval": 1,
+		"on-click": "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle",
+		"on-scroll-up": "wpctl set-volume -l 1.5 @DEFAULT_AUDIO_SINK@ 5%+",
+		"on-scroll-down": "wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-"
+	},
 
-    // Brightness
-    "custom/brightness": {
-        "exec": "~/.config/waybar/scripts/brightness.sh",
-        "return-type": "json",
-        "interval": 1,
-        "on-scroll-up": "brightnessctl set +5%",
-        "on-scroll-down": "brightnessctl set 5%-"
-    },
+	// Brightness
+	"custom/brightness": {
+		"exec": "~/.config/waybar/scripts/brightness.sh",
+		"return-type": "json",
+		"interval": 1,
+		"on-scroll-up": "brightnessctl set +5%",
+		"on-scroll-down": "brightnessctl set 5%-"
+	},
 
-    // Battery
-    "custom/battery": {
-        "exec": "~/.config/waybar/scripts/battery.sh",
-        "return-type": "json",
-        "interval": 10
-    },
+	// Battery
+	"custom/battery": {
+		"exec": "~/.config/waybar/scripts/battery.sh",
+		"return-type": "json",
+		"interval": 10
+	},
 
-    "battery": {
-        "format": "{icon}  {capacity}%",
-        "format-icons": {
-        "charging": [
-            "󰢜","󰂆","󰂇","󰂈","󰢝","󰂉","󰢞","󰂊","󰂋","󰂅"
-        ],
-        "default": [
-            "󰁺","󰁻","󰁼","󰁽","󰁾","󰁿","󰂀","󰂁","󰂂","󰁹"
-        ]
-        },
-        "format-full": "Charged ",
-        "interval": 5,
-        "states": {
-        "warning": 20,
-        "critical": 10
-        },
-        "tooltip": true
-    }
+	"battery": {
+		"format": "{icon}  {capacity}%",
+		"format-icons": {
+			"charging": ["󰢜", "󰂆", "󰂇", "󰂈", "󰢝", "󰂉", "󰢞", "󰂊", "󰂋", "󰂅"],
+			"default": ["󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"]
+		},
+		"format-full": "Charged ",
+		"interval": 5,
+		"states": {
+			"warning": 20,
+			"critical": 10
+		},
+		"tooltip": true
+	}
 }

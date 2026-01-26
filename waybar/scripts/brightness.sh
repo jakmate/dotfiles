@@ -25,11 +25,11 @@ icon="󰛨"
 
 # Color thresholds
 if [ "$percent" -lt 10 ]; then
-  fg="$COLOR_LOW"
+	fg="$COLOR_LOW"
 elif [ "$percent" -lt 50 ]; then
-  fg="$COLOR_MEDIUM"
+	fg="$COLOR_MEDIUM"
 else
-  fg="$COLOR_HIGH"
+	fg="$COLOR_HIGH"
 fi
 
 # Device name (first column from brightnessctl --machine-readable)

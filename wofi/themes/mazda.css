@@ -4,72 +4,72 @@
    ========================= */
 
 * {
-    font-family: "JetBrains Mono", "Iosevka", monospace;
-    font-size: 14px;
-    border-radius: 0;
+	font-family: "JetBrains Mono", "Iosevka", monospace;
+	font-size: 14px;
+	border-radius: 0;
 }
 
 /* Main window */
 window {
-    background-color: #201D1F;
-    border: 2px solid #7D7F82;
-    padding: 10px;
+	background-color: #201d1f;
+	border: 2px solid #7d7f82;
+	padding: 10px;
 }
 
 /* Outer container */
 #outer-box {
-    padding: 6px;
+	padding: 6px;
 }
 
 /* Search input (infotainment input) */
 #input {
-    background-color: #2A2628;
-    color: #D7D7DA;
-    border: 1px solid #7D7F82;
-    padding: 8px;
-    margin-bottom: 8px;
+	background-color: #2a2628;
+	color: #d7d7da;
+	border: 1px solid #7d7f82;
+	padding: 8px;
+	margin-bottom: 8px;
 }
 
 #input:focus {
-    border: 1px solid #F01416;
-    box-shadow: 0 0 6px rgba(240,20,22,0.6);
+	border: 1px solid #f01416;
+	box-shadow: 0 0 6px rgba(240, 20, 22, 0.6);
 }
 
 /* Scroll area */
 #scroll {
-    margin: 0;
+	margin: 0;
 }
 
 /* Entry rows */
 #entry {
-    padding: 8px;
-    margin: 2px 0;
-    background-color: transparent;
-    color: #7D7F82;
-    border-left: 2px solid transparent;
+	padding: 8px;
+	margin: 2px 0;
+	background-color: transparent;
+	color: #7d7f82;
+	border-left: 2px solid transparent;
 }
 
 /* Icon */
 #entry image {
-    margin-right: 8px;
+	margin-right: 8px;
 }
 
 /* Text inside entry */
 #entry label {
-    color: inherit;
+	color: inherit;
 }
 
 /* Hovered entry */
 #entry:hover {
-    background-color: #2E2A2C;
-    color: #D7D7DA;
+	background-color: #2e2a2c;
+	color: #d7d7da;
 }
 
 /* Selected entry (active gauge) */
 #entry:selected {
-    background-color: #2A2628;
-    color: #F01416;
-    border-left: 2px solid #F01416;
+	background-color: #2a2628;
+	color: #f01416;
+	border-left: 2px solid #f01416;
 }
 
 /* =========================
@@ -77,27 +77,27 @@ window {
    ========================= */
 
 #mode-switcher {
-    margin-top: 6px;
-    border-top: 1px solid #7D7F82;
-    padding-top: 6px;
+	margin-top: 6px;
+	border-top: 1px solid #7d7f82;
+	padding-top: 6px;
 }
 
 #mode-switcher button {
-    background-color: #2A2628;
-    color: #7D7F82;
-    border: 1px solid #7D7F82;
-    padding: 4px 8px;
-    margin-right: 4px;
+	background-color: #2a2628;
+	color: #7d7f82;
+	border: 1px solid #7d7f82;
+	padding: 4px 8px;
+	margin-right: 4px;
 }
 
 #mode-switcher button:hover {
-    border-color: #F01416;
-    color: #D7D7DA;
+	border-color: #f01416;
+	color: #d7d7da;
 }
 
 #mode-switcher button:selected {
-    color: #F01416;
-    border-color: #F01416;
+	color: #f01416;
+	border-color: #f01416;
 }
 
 /* =========================
@@ -105,7 +105,6 @@ window {
    ========================= */
 
 #empty {
-    color: #7D7F82;
-    padding: 10px;
+	color: #7d7f82;
+	padding: 10px;
 }
-

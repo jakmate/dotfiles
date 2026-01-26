@@ -9,9 +9,9 @@
 source "$(dirname "$0")/colours.sh"
 
 if pactl get-source-mute @DEFAULT_SOURCE@ | grep -q 'yes'; then
-  # Muted → mic-off icon
-  echo "<span foreground='$COLOR_LOW'>[  ]</span>"
+	# Muted → mic-off icon
+	echo "<span foreground='$COLOR_LOW'>[  ]</span>"
 else
-  # Active → mic-on icon
-  echo "<span foreground='$COLOR_HIGH'>[  ]</span>"
+	# Active → mic-on icon
+	echo "<span foreground='$COLOR_HIGH'>[  ]</span>"
 fi

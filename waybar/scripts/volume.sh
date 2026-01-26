@@ -20,12 +20,12 @@ sink=$(wpctl status | awk '/Sinks:/,/Sources:/' | grep '\*' | cut -d'.' -f2- | s
 
 # Icon logic
 if [ "$is_muted" = true ] || [ "$vol_int" == 0 ]; then
-  icon=""
-  vol_int=0
+	icon=""
+	vol_int=0
 elif [ "$vol_int" -lt 50 ]; then
-  icon=""
+	icon=""
 else
-  icon=""
+	icon=""
 fi
 
 # ASCII bar
@@ -37,18 +37,18 @@ ascii_bar="[$bar$pad]"
 
 # Color logic
 if [ "$is_muted" = true ] || [ "$vol_int" -lt 10 ]; then
-  fg="$COLOR_LOW"
+	fg="$COLOR_LOW"
 elif [ "$vol_int" -lt 50 ]; then
-  fg="$COLOR_MEDIUM"
+	fg="$COLOR_MEDIUM"
 else
-  fg="$COLOR_HIGH"
+	fg="$COLOR_HIGH"
 fi
 
 # Tooltip text
 if [ "$is_muted" = true ]; then
-  tooltip="Audio: Muted\nOutput: $sink"
+	tooltip="Audio: Muted\nOutput: $sink"
 else
-  tooltip="Audio: $vol_int%\nOutput: $sink"
+	tooltip="Audio: $vol_int%\nOutput: $sink"
 fi
 
 # Final JSON output

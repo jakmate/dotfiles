@@ -24,6 +24,7 @@ cp "$HOME/.config/fastfetch/themes/$THEME.jsonc" "$HOME/.config/fastfetch/config
 cp "$HOME/.config/waybar/themes/$THEME.css" "$HOME/.config/waybar/style.css"
 cp "$HOME/.config/waybar/themes/$THEME.sh" "$HOME/.config/waybar/scripts/colours.sh"
 cp "$HOME/.config/kitty/themes/$THEME.conf" "$HOME/.config/kitty/kitty.conf"
+cp "$HOME/.config/dunst/themes/$THEME" "$HOME/.config/dunst/dunstrc"
 
 # Extracting the wallpaper path from the configuration
 WALLPAPER_PATH=$(grep 'path =' "$HOME/.config/hypr/hyprpaper.conf" | cut -d'=' -f2 | tr -d ' ')
@@ -37,6 +38,7 @@ else
   echo "Wallpaper path not found in configuration."
 fi
 
+killall dunst && dunst &
 killall waybar && waybar &
 hyprctl reload
 

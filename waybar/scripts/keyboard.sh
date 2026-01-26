@@ -5,9 +5,9 @@ layouts=("gb" "pl" "jp")
 
 # Labels to show in Waybar
 declare -A labels=(
-  ["gb"]="GB"
-  ["pl"]="PL"
-  ["jp"]="JP"
+	["gb"]="GB"
+	["pl"]="PL"
+	["jp"]="JP"
 )
 
 # Get current keymap name
@@ -27,13 +27,13 @@ esac
 
 # Find index
 for i in "${!layouts[@]}"; do
-  [[ "${layouts[$i]}" == "$cur" ]] && index=$i
+	[[ "${layouts[$i]}" == "$cur" ]] && index=$i
 done
 
 # Rotate layout on click
 if [[ "$1" == "next" ]]; then
-  hyprctl switchxkblayout main next
-  exit 0
+	hyprctl switchxkblayout main next
+	exit 0
 fi
 
 # Plain text output

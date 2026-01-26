@@ -1,111 +1,111 @@
 {
-    "$schema": "https://github.com/fastfetch-cli/fastfetch/raw/dev/doc/json_schema.json",
-    "logo": {
-        "type": "auto",
-        "source": "~/.config/fastfetch/behelit_bad.txt",
-        //"height": 1,
-        //"width": 1,
-        //"padding": {
-        //    "top": 0,
-        //    "left": 0,
-        //    "right": 0
-        //},
-        "color": {
-            "1": "#FF6B5A",
-            "2": "#FF8E7D"
-        }
-    },
-    "display": {
-        "separator": " ▸ ",
-        "color": {
-            "separator": "#FF8E7D",
-            "keys": "#A6ADC8",
-            "title": "#FF6B5A"
-        }
-    },
-    "modules": [
-        {
-            "type": "title",
-            "keyColor": "#FF6B5A"
-        },
-        {
-            "type": "separator"
-        },
-        {
-            "type": "os",
-            "key": "OS",
-            "keyColor": "110"
-        },
-        {
-            "type": "host",
-            "key": "Host",
-            "keyColor": "110"
-        },
-        {
-            "type": "kernel",
-            "key": "Kernel",
-            "keyColor": "110"
-        },
-        {
-            "type": "packages",
-            "key": "Packages",
-            "keyColor": "110"
-        },
-        {
-            "type": "uptime",
-            "key": "Uptime",
-            "keyColor": "110"
-        },
-        {
-            "type": "break"
-        },
-        {
-            "type": "shell",
-            "key": "Shell",
-            "keyColor": "110"
-        },
-        {
-            "type": "terminal",
-            "key": "Terminal",
-            "keyColor": "110"
-        },
-        {
-            "type": "theme",
-            "key": "Theme",
-            "keyColor": "110"
-        },
-        {
-            "type": "icons",
-            "key": "Icons",
-            "keyColor": "110"
-        },
-        {
-            "type": "break"
-        },
-        {
-            "type": "cpu",
-            "key": "CPU",
-            "keyColor": "110"
-        },
-        {
-            "type": "gpu",
-            "key": "GPU",
-            "keyColor": "110"
-        },
-        {
-            "type": "memory",
-            "key": "Memory",
-            "keyColor": "110"
-        },
-        {
-            "type": "disk",
-            "key": "Disk",
-            "keyColor": "110"
-        },
-        {
-            "type": "battery",
-            "key": "Battery",
-            "keyColor": "110"
-        }
-    ]
+	"$schema": "https://github.com/fastfetch-cli/fastfetch/raw/dev/doc/json_schema.json",
+	"logo": {
+		"type": "auto",
+		"source": "~/.config/fastfetch/behelit_bad.txt",
+		//"height": 1,
+		//"width": 1,
+		//"padding": {
+		//    "top": 0,
+		//    "left": 0,
+		//    "right": 0
+		//},
+		"color": {
+			"1": "#FF6B5A",
+			"2": "#FF8E7D"
+		}
+	},
+	"display": {
+		"separator": " ▸ ",
+		"color": {
+			"separator": "#FF8E7D",
+			"keys": "#A6ADC8",
+			"title": "#FF6B5A"
+		}
+	},
+	"modules": [
+		{
+			"type": "title",
+			"keyColor": "#FF6B5A"
+		},
+		{
+			"type": "separator"
+		},
+		{
+			"type": "os",
+			"key": "OS",
+			"keyColor": "110"
+		},
+		{
+			"type": "host",
+			"key": "Host",
+			"keyColor": "110"
+		},
+		{
+			"type": "kernel",
+			"key": "Kernel",
+			"keyColor": "110"
+		},
+		{
+			"type": "packages",
+			"key": "Packages",
+			"keyColor": "110"
+		},
+		{
+			"type": "uptime",
+			"key": "Uptime",
+			"keyColor": "110"
+		},
+		{
+			"type": "break"
+		},
+		{
+			"type": "shell",
+			"key": "Shell",
+			"keyColor": "110"
+		},
+		{
+			"type": "terminal",
+			"key": "Terminal",
+			"keyColor": "110"
+		},
+		{
+			"type": "theme",
+			"key": "Theme",
+			"keyColor": "110"
+		},
+		{
+			"type": "icons",
+			"key": "Icons",
+			"keyColor": "110"
+		},
+		{
+			"type": "break"
+		},
+		{
+			"type": "cpu",
+			"key": "CPU",
+			"keyColor": "110"
+		},
+		{
+			"type": "gpu",
+			"key": "GPU",
+			"keyColor": "110"
+		},
+		{
+			"type": "memory",
+			"key": "Memory",
+			"keyColor": "110"
+		},
+		{
+			"type": "disk",
+			"key": "Disk",
+			"keyColor": "110"
+		},
+		{
+			"type": "battery",
+			"key": "Battery",
+			"keyColor": "110"
+		}
+	]
 }
